@@ -18,6 +18,23 @@
 
 			console.log(inicio);
 
+			function ejecutar(){
+				var valor = 0;
+				var incrementar = function(){
+
+					return valor += 3;
+				}
+
+				return incrementar;
+
+			}
+
+			var operacion  = ejecutar();
+
+			console.log(operacion()+"</br>")
+			console.log(operacion()+"</br>")
+			console.log(operacion()+"</br>")
+
 		</script>
 	</head>
 
