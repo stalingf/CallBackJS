@@ -3,38 +3,53 @@
 	<head>
 		<title>Aprendiendo CallBackJS</title>
 		<script>
-			var inicio = function(valor, callback){
-				if(typeof callback == "function"){
-					callback(valor);
-				}else{
-					console.log(valor);
+
+			function calculadora(numeroEntrada, operacion){
+
+				var numero = 0;
+				
+				function sumar(numeroEntrada){
+					numero += numeroEntrada;
+					return numero;
+				}
+
+				function restar (numeroEntrada){
+					numero -= numeroEntrada;
+					return numero;
+				}
+
+				function multiplicar(numeroEntrada){
+					numero *= numeroEntrada;
+					return numero;
+				}
+
+				function dividir(numeroEntrada){
+					numero /= numeroEntrada;
+					return numero;
+				}
+
+				switch(operacion){
+					case "+":
+						return {nuevoValor:sumar(numeroEntrada)};
+						break;
+					case "-":
+						return {nuevoValor:restar(numeroEntrada)};
+						break;
+					case "*":
+						return {nuevoValor:multiplicar(numeroEntrada)};
+						break;
+					case "/":
+						return {nuevoValor:dividir(numeroEntrada)};
+						break;
+					default :
+						console.log("la operacion es incorrecta");
 				}
 
 			}
-
-			inicio("staling",function(valor){
-				console.log("hola ", valor);
-			});
-
-			console.log(inicio);
-
-			function ejecutar(){
-				var valor = 0;
-				var incrementar = function(){
-
-					return valor += 3;
-				}
-
-				return incrementar;
-
-			}
-
-			var operacion  = ejecutar();
-
-			console.log(operacion()+"</br>")
-			console.log(operacion()+"</br>")
-			console.log(operacion()+"</br>")
-
+			var numero = prompt("pun una cantidad de numero");
+			var signo = prompt("pon un signo");
+			var json = calculadora(numero,signo);
+			console.log(json.nuevoValor);
 		</script>
 	</head>
 
