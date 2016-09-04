@@ -2,6 +2,23 @@
 <html>
 	<head>
 		<title>Aprendiendo CallBackJS</title>
+		<script>
+			var inicio = function(valor, callback){
+				if(typeof callback == "function"){
+					callback(valor);
+				}else{
+					console.log(valor);
+				}
+
+			}
+
+			inicio("staling",function(valor){
+				console.log("hola ", valor);
+			});
+
+			console.log(inicio);
+
+		</script>
 	</head>
 
 	<body>

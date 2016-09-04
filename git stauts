@@ -1,0 +1,28 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 34f1b3c..6fe7f6a 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -2,6 +2,23 @@[m
+ <html>[m
+ 	<head>[m
+ 		<title>Aprendiendo CallBackJS</title>[m
+[32m+[m		[32m<script>[m
+[32m+[m			[32mvar inicio = function(valor, callback){[m
+[32m+[m				[32mif(typeof callback == "function"){[m
+[32m+[m					[32mcallback(valor);[m
+[32m+[m				[32m}else{[m
+[32m+[m					[32mconsole.log(valor);[m
+[32m+[m				[32m}[m
+[32m+[m
+[32m+[m			[32m}[m
+[32m+[m
+[32m+[m			[32minicio("staling",function(valor){[m
+[32m+[m				[32mconsole.log("hola ", valor);[m
+[32m+[m			[32m});[m
+[32m+[m
+[32m+[m			[32mconsole.log(inicio);[m
+[32m+[m
+[32m+[m		[32m</script>[m
+ 	</head>[m
+ [m
+ 	<body>[m
